@@ -1,0 +1,116 @@
+/* ==========================================================
+   个人名片样式表
+   说明：整体采用简约风格，卡片居中显示，
+        含圆形头像、姓名、职位、联系方式，
+        圆角 12px、柔和阴影，悬停时轻微上浮动画。
+   ========================================================== */
+
+/* 全局样式重置，统一盒模型 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 页面背景与整体居中布局 */
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 柔和渐变背景，衬托简约卡片 */
+  background: linear-gradient(135deg, #eef2f7 0%, #dfe7ef 100%);
+  font-family: "Microsoft YaHei", "PingFang SC", "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ---------------- 名片卡片主体 ---------------- */
+.card {
+  width: 320px;
+  padding: 40px 32px;
+  text-align: center;
+  background-color: #ffffff;
+
+  /* 12px 圆角 */
+  border-radius: 12px;
+
+  /* 柔和阴影，营造轻微悬浮感 */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+
+  /* 过渡动画：为 transform 与 box-shadow 添加平滑效果 */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 鼠标悬停时：轻微上浮 + 阴影加深，增强层次感 */
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 32px rgba(0, 0, 0, 0.12);
+}
+
+/* ---------------- 圆形头像 ---------------- */
+.avatar {
+  width: 96px;
+  height: 96px;
+  margin: 0 auto 20px;
+  border-radius: 50%; /* 圆形头像 */
+  background: linear-gradient(135deg, #6c8ef5, #7b61ff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(108, 142, 245, 0.35);
+}
+
+/* ---------------- 姓名 ---------------- */
+.name {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222831;
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+/* ---------------- 职位 ---------------- */
+.position {
+  font-size: 14px;
+  color: #7b61ff;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+/* ---------------- 分隔线 ---------------- */
+.divider {
+  border: none;
+  height: 1px;
+  background-color: #eeeeee;
+  margin: 0 0 20px;
+}
+
+/* ---------------- 联系方式列表 ---------------- */
+.contact-list {
+  list-style: none;
+  text-align: left;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: #555555;
+  margin-bottom: 12px;
+}
+
+.contact-item:last-child {
+  margin-bottom: 0;
+}
+
+/* 联系方式图标 */
+.contact-icon {
+  width: 24px;
+  margin-right: 10px;
+  font-size: 16px;
+  text-align: center;
+}
+
+/* 联系方式文字 */
+.contact-text {
+  flex: 1;
+}
